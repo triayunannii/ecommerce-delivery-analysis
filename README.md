@@ -6,7 +6,7 @@ This project analyzes e-commerce delivery performance and customer satisfaction 
 
 The analysis focuses on understanding delivery delays, customer review patterns, and product categories with relatively high delivery delay rates.
 
-The main business question is:
+### Business Question
 
 > **What factors are associated with late deliveries and poor customer reviews?**
 
@@ -58,30 +58,35 @@ The original dataset is available on Kaggle.
 
 The analysis follows these main stages:
 
-1. **Data Loading**
-   - Load relevant Olist datasets.
-   - Inspect dataset structure and data types.
+### 1. Data Loading
 
-2. **Data Cleaning**
-   - Convert date columns into datetime format.
-   - Identify missing values.
-   - Filter delivered orders with available delivery dates.
-   - Handle missing product categories for category-level analysis.
+- Load the relevant Olist datasets.
+- Inspect dataset structure, data types, and missing values.
 
-3. **Delivery Performance Analysis**
-   - Calculate delivery delay in days.
-   - Classify orders as Early or Late.
-   - Calculate the overall late delivery rate.
+### 2. Data Cleaning
 
-4. **Customer Satisfaction Analysis**
-   - Analyze customer review scores.
-   - Compare review scores between Early and Late deliveries.
-   - Measure the proportion of low ratings (≤2).
+- Convert date columns into datetime format.
+- Identify and evaluate missing values.
+- Filter delivered orders with available actual delivery dates.
+- Handle missing product categories for category-level analysis.
 
-5. **Product Category Analysis**
-   - Calculate late delivery rates by product category.
-   - Compare category-level delivery performance and average review scores.
-   - Use a minimum order threshold to reduce the influence of categories with very small sample sizes.
+### 3. Delivery Performance Analysis
+
+- Calculate delivery delay in days.
+- Classify orders as Early or Late.
+- Calculate the overall late delivery rate.
+
+### 4. Customer Satisfaction Analysis
+
+- Analyze customer review scores.
+- Compare review scores between Early and Late deliveries.
+- Measure the proportion of low ratings (≤2).
+
+### 5. Product Category Analysis
+
+- Calculate late delivery rates by product category.
+- Compare category-level delivery performance and average review scores.
+- Apply a minimum order threshold to reduce the influence of categories with very small sample sizes.
 
 ---
 
@@ -89,15 +94,15 @@ The analysis follows these main stages:
 
 ### 1. Overall Delivery Performance
 
-Among 96,470 delivered orders with available actual delivery dates:
+Among **96,470 delivered orders** with available actual delivery dates:
 
 > **8.11% of orders were delivered late.**
 
-This indicates that while the majority of orders were delivered before the estimated delivery date, a measurable proportion experienced delays.
+This indicates that while the majority of orders were delivered before the estimated delivery date, a measurable proportion experienced delivery delays.
 
 ### 2. Late Deliveries and Customer Dissatisfaction
 
-A strong difference was observed between early and late deliveries.
+A substantial difference was observed between early and late deliveries.
 
 | Delivery Status | Low Rating (≤2) |
 |---|---:|
@@ -107,6 +112,12 @@ A strong difference was observed between early and late deliveries.
 More than half of late orders received a low customer rating, compared with only 9.23% of early orders.
 
 This represents approximately a **5.9× higher proportion of low ratings among late orders**.
+
+### 📊 Key Visualization
+
+![Low Customer Rating by Delivery Status](low_rating_by_delivery_status.png)
+
+*Late orders show a substantially higher proportion of low customer ratings compared with early orders.*
 
 ### 3. Product Categories with Higher Late Delivery Rates
 
@@ -125,15 +136,15 @@ These categories can be considered areas for further operational investigation.
 
 ## 💡 Business Insights
 
-The analysis indicates that **delivery reliability is closely associated with customer satisfaction at the order level**.
+The analysis indicates that **delivery reliability is strongly associated with customer satisfaction at the order level**.
 
 Late orders had substantially higher proportions of low customer ratings compared with early orders.
 
-However, the relationship between category-level late delivery rates and average review scores was relatively weak (correlation = -0.14).
+However, the relationship between category-level late delivery rates and average review scores was relatively weak, with a correlation of **-0.14**.
 
-This suggests that delivery delays are an important customer experience signal, but other factors may also influence customer satisfaction.
+This suggests that delivery delays are an important customer experience signal, while other factors may also influence customer satisfaction.
 
-> **Important:** The analysis identifies associations rather than causal relationships.
+> **Important:** This analysis identifies associations rather than causal relationships.
 
 ---
 
@@ -143,7 +154,7 @@ This suggests that delivery delays are an important customer experience signal, 
 
 Implement operational monitoring to identify orders that are approaching their estimated delivery date but have not yet reached the expected delivery stage.
 
-This can allow the operations team to intervene before an order becomes significantly delayed.
+This would allow the operations team to intervene before an order becomes significantly delayed.
 
 ### 2. Investigate High-Risk Product Categories
 
