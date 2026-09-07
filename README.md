@@ -197,18 +197,3 @@ ecommerce-delivery-analysis/
 └── ecommerce_delivery_customer_satisfaction_analysis.ipynb
 ```
 
----
-
-## 👤 Author
-
-**Tria Yunanni**
-
-**Bachelor of Data Science | Business Analytics | Data Analysis**
-
-Interested in transforming data into actionable business insights and supporting data-driven decision-making.
-
----
-
-## 📓 Notebook
-
-The complete analysis, data preparation, visualizations, and findings are available in the Jupyter Notebook included in this repository.
